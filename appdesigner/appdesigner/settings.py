@@ -30,17 +30,6 @@ ALLOWED_HOSTS = []
 # Application definition
 INSTALLED_APPS = [
 
-    #Added by Roman
-    #Plugins
-    'django.contrib.sites',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    'accounts.apps.AccountsConfig',
-
-    #My app
-    'course',
-
     #Defaulfs
     'django.contrib.admin',
     'django.contrib.auth',
@@ -48,6 +37,19 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    #My app
+    'course',
+
+    #Added by Roman
+    #Plugins
+    'django.contrib.sites',
+
+    'allauth.account',
+    'allauth',
+    'allauth.socialaccount',
+    'accounts.apps.AccountsConfig',
+
 ]
 
 #Added by Roman on 2/8/19 - Auth plugin

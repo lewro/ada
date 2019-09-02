@@ -13,4 +13,4 @@ tests/.coverage
 build/
 tests/report/
 appdesigner/appdesigner/settings.py
-db.sqlite3
+appdesigner/db.sqlite3
