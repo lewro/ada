@@ -12,5 +12,5 @@ tests/coverage_html/
 tests/.coverage
 build/
 tests/report/
-appdesigner/settings.py
+appdesigner/appdesigner/settings.py
 db.sqlite3
