@@ -18,7 +18,7 @@
       <form action="/course/send_ebook/" method="post">
         {% csrf_token %}
         <div class="input-field wr">
-          <input type="email" name="email" id="email" >
+          <input type="email" name="email" id="email" required>
           <label for="email">Your Email</label>
         </div>
         <div class="wr">
@@ -39,7 +39,6 @@
         <li><img src="{{ MEDIA_URL }}07.jpg"/></li>
         <li><img src="{{ MEDIA_URL }}08.jpg"/></li>
         <li><img src="{{ MEDIA_URL }}09.jpg"/></li>
-        <li><img src="{{ MEDIA_URL }}10.jpg"/></li>
 
         <li><img src="{{ MEDIA_URL }}10.jpg"/></li>
         <li><img src="{{ MEDIA_URL }}11.jpg"/></li>

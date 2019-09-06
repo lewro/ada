@@ -45,7 +45,7 @@ def send_ebook(request):
 
   subject     = "eBook Request"
   email       = request.POST['email']
-  message     = "Email:" + email
+  message     = email
 
   from_email  = settings.EMAIL_HOST_USER
   password    = settings.EMAIL_HOST_PASSWORD
