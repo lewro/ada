@@ -1,0 +1,75 @@
+.ebook label.active {
+  color: #2189FF !important;
+}
+
+.ebook input:focus {
+  border-bottom: 1px solid #2189FF !important;
+  box-shadow: 0px !important;
+}
+
+.ebook form {
+  padding: 25px 0 100px 0;
+}
+
+.ebook .primaryAction {
+  background: #fff;
+  color: #000;
+  border: 1px solid #ddd;
+  box-shadow: 0px 5px 10px -5px rgb(0,0,0, 0.1);
+  box-shadow: 0px;
+  padding: 15px 50px;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+.ebook .primaryAction:hover {
+  background: #000;
+  color: #fff;
+  border: 1px solid #000;
+  box-shadow: 0px 5px 10px -5px rgb(0,0,0, 0.5);
+}
+
+.ebook .main-content h1 {
+  margin-bottom: 25px;
+}
+
+#ebook-list {
+  padding: 0 !important;
+  margin: 20px 0 50px 0!important;
+}
+
+#ebook-list li {
+  float: left;
+  width: 125px;
+  margin: 0 10px 10px 0;
+}
+
+#ebook-list li img {
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+  width: 100%;
+}
+
+.ebook_sent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 100px;
+  width: 100%;
+  height: 100vh;
+  background: #f2f2f2;
+  color: #000;
+  text-align: center;
+  z-index: 999;
+}
+
+.ebook_sent .fa-thumbs-up {
+  font-size: 100px;
+  opacity: .1;
+}
+
+.ebook_sent h1 {
+  font-weight: 300;
+  margin: 50px 0 15px 0;
+}
+

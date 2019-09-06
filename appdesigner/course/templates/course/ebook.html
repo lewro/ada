@@ -1,0 +1,125 @@
+{% extends "course/base.html" %}
+
+{% block content %}
+
+<div class="index ebook">
+
+{% include 'course/partials/hero.html' %}
+
+<div class="container">
+  <div class="main-content">
+    <div class="row vrithm">
+      <h1>Free eBook</h1>
+
+      <p>Request the <strong>73 pages ebook</strong> I have created as the base of this course. It will provide you with great overview of the <strong>application designer job</strong> and you get the full picture of what you need to know and study to become professional in this field.</p>
+
+      <p>Simply drop your email address below and I will personally email it to you.</p>
+
+      <form action="/course/send_ebook/" method="post">
+        {% csrf_token %}
+        <div class="input-field wr">
+          <input type="email" name="email" id="email" >
+          <label for="email">Your Email</label>
+        </div>
+        <div class="wr">
+          <button class="primaryAction" type="submit">Please Send Me My Free eBook</button>
+        </div>
+      </form>
+
+      <h2>Content you will receive</h2>
+      <p>Please note that these images are low resolution, just to provide you a quick glance, you will receive PDF file with full resolution images.</p>
+
+      <ul id="ebook-list" class="clearfix">
+        <li><img src="/course/media/01.jpg"/></li>
+        <li><img src="/course/media/02.jpg"/></li>
+        <li><img src="/course/media/03.jpg"/></li>
+        <li><img src="/course/media/04.jpg"/></li>
+        <li><img src="/course/media/05.jpg"/></li>
+        <li><img src="/course/media/06.jpg"/></li>
+        <li><img src="/course/media/07.jpg"/></li>
+        <li><img src="/course/media/08.jpg"/></li>
+        <li><img src="/course/media/09.jpg"/></li>
+        <li><img src="/course/media/10.jpg"/></li>
+
+        <li><img src="/course/media/10.jpg"/></li>
+        <li><img src="/course/media/11.jpg"/></li>
+        <li><img src="/course/media/12.jpg"/></li>
+        <li><img src="/course/media/13.jpg"/></li>
+        <li><img src="/course/media/14.jpg"/></li>
+        <li><img src="/course/media/15.jpg"/></li>
+        <li><img src="/course/media/16.jpg"/></li>
+        <li><img src="/course/media/17.jpg"/></li>
+        <li><img src="/course/media/18.jpg"/></li>
+        <li><img src="/course/media/19.jpg"/></li>
+
+        <li><img src="/course/media/20.jpg"/></li>
+        <li><img src="/course/media/21.jpg"/></li>
+        <li><img src="/course/media/22.jpg"/></li>
+        <li><img src="/course/media/23.jpg"/></li>
+        <li><img src="/course/media/24.jpg"/></li>
+        <li><img src="/course/media/25.jpg"/></li>
+        <li><img src="/course/media/26.jpg"/></li>
+        <li><img src="/course/media/27.jpg"/></li>
+        <li><img src="/course/media/28.jpg"/></li>
+        <li><img src="/course/media/29.jpg"/></li>
+
+        <li><img src="/course/media/30.jpg"/></li>
+        <li><img src="/course/media/31.jpg"/></li>
+        <li><img src="/course/media/32.jpg"/></li>
+        <li><img src="/course/media/33.jpg"/></li>
+        <li><img src="/course/media/34.jpg"/></li>
+        <li><img src="/course/media/35.jpg"/></li>
+        <li><img src="/course/media/36.jpg"/></li>
+        <li><img src="/course/media/37.jpg"/></li>
+        <li><img src="/course/media/38.jpg"/></li>
+        <li><img src="/course/media/39.jpg"/></li>
+
+        <li><img src="/course/media/40.jpg"/></li>
+        <li><img src="/course/media/41.jpg"/></li>
+        <li><img src="/course/media/42.jpg"/></li>
+        <li><img src="/course/media/43.jpg"/></li>
+        <li><img src="/course/media/44.jpg"/></li>
+        <li><img src="/course/media/45.jpg"/></li>
+        <li><img src="/course/media/46.jpg"/></li>
+        <li><img src="/course/media/47.jpg"/></li>
+        <li><img src="/course/media/48.jpg"/></li>
+        <li><img src="/course/media/49.jpg"/></li>
+
+        <li><img src="/course/media/50.jpg"/></li>
+        <li><img src="/course/media/51.jpg"/></li>
+        <li><img src="/course/media/52.jpg"/></li>
+        <li><img src="/course/media/53.jpg"/></li>
+        <li><img src="/course/media/54.jpg"/></li>
+        <li><img src="/course/media/55.jpg"/></li>
+        <li><img src="/course/media/56.jpg"/></li>
+        <li><img src="/course/media/57.jpg"/></li>
+        <li><img src="/course/media/58.jpg"/></li>
+        <li><img src="/course/media/59.jpg"/></li>
+
+        <li><img src="/course/media/60.jpg"/></li>
+        <li><img src="/course/media/61.jpg"/></li>
+        <li><img src="/course/media/62.jpg"/></li>
+        <li><img src="/course/media/63.jpg"/></li>
+        <li><img src="/course/media/64.jpg"/></li>
+        <li><img src="/course/media/65.jpg"/></li>
+        <li><img src="/course/media/66.jpg"/></li>
+        <li><img src="/course/media/67.jpg"/></li>
+        <li><img src="/course/media/68.jpg"/></li>
+        <li><img src="/course/media/69.jpg"/></li>
+
+        <li><img src="/course/media/70.jpg"/></li>
+        <li><img src="/course/media/71.jpg"/></li>
+        <li><img src="/course/media/72.jpg"/></li>
+        <li><img src="/course/media/73.jpg"/></li>
+        <li><img src="/course/media/74.jpg"/></li>
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+{% include 'course/partials/footer.html' %}
+
+</div>
+
+{% endblock %}

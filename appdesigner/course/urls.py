@@ -19,6 +19,8 @@ urlpatterns = [
     path('payment/', views.payment, name='payment'),
     path('contact/', views.contact, name='contact'),
     path('set_customer_as_paid/', views.set_customer_as_paid, name='set_customer_as_paid'),
+    path('ebook/', views.ebook, name='ebook'),
+    path('send_ebook/', views.send_ebook, name='send_ebook'),
 
     path('start/', views.start, name='start'),
     path('inspiration/', views.inspiration, name='inspiration'),

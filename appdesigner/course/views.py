@@ -38,6 +38,23 @@ def index(request):
 def about(request):
   return render(request, 'course/about.html')
 
+def ebook(request):
+  return render(request, 'course/ebook.html')
+
+def send_ebook(request):
+
+  subject     = "eBook Request"
+  email       = request.POST['email']
+  message     = "Email:" + email
+
+  from_email  = settings.EMAIL_HOST_USER
+  password    = settings.EMAIL_HOST_PASSWORD
+  to_list     = ['applicationdesignacademy@gmail.com']
+
+  send_mail(subject, message, from_email, to_list, fail_silently=True)
+
+  return render(request, 'course/send_ebook.html')
+
 def terms(request):
   return render(request, 'course/terms.html')
 
