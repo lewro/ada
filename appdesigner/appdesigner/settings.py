@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'm3n&*w!z0_c44xd36l5mlb0)(y1xt-emqdr=$tzpnp04343)@y'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -91,7 +91,8 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'course.context_processors.all_lessons',
-                'course.context_processors.time_spent'
+                'course.context_processors.time_spent',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -148,9 +149,9 @@ USE_TZ = True
 STATIC_URL                 = '/static/'
 STATIC_ROOT                = os.path.join(os.path.dirname(BASE_DIR), "appdesigner/course/static")
 
-MEDIA_ROOT                 = os.path.join(os.path.dirname(BASE_DIR),'appdesigner/course/media')
-MEDIA_URL                  =  "/media/"
 
+MEDIA_ROOT                 = os.path.join(os.path.dirname(BASE_DIR),"appdesigner/course/media")
+MEDIA_URL                  = '/media/'
 
 LOGIN_URL                  = '/accounts/login/'
 LOGIN_REDIRECT_URL         = '/course/start/'
