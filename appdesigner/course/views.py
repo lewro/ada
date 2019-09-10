@@ -24,6 +24,19 @@ def is_customer(request):
   else:
     return False
 
+def customer_has_full_access(request):
+  user_id            = request.user.id #Current user
+  user_exist         = Customer.objects.filter(user_id=user_id)
+
+  if len(user_exist) > 0:
+    current_user = Customer.objects.get(user_id=user_id)
+    if current_user.plan == 2:
+      return True
+    else:
+      return False
+  else:
+    return False
+
 def is_staff(request):
   user_id      = request.user.id #Current user
   user         = User.objects.get(id=user_id)
@@ -37,6 +50,18 @@ def index(request):
 
 def about(request):
   return render(request, 'course/about.html')
+
+def paypal_1(request):
+  return render(request, 'course/paypal_1.html')
+
+def paypal_2(request):
+  return render(request, 'course/paypal_2.html')
+
+def paypal_3(request):
+  return render(request, 'course/paypal_3.html')
+
+def upgrade(request):
+  return render(request, 'course/upgrade.html')
 
 def ebook(request):
   return render(request, 'course/ebook.html')
@@ -132,8 +157,15 @@ def contact(request):
 @login_required
 @require_http_methods(["POST"])
 def set_customer_as_paid(request):
-  user_id            = request.user.id #Current user
-  current_user       = Customer.objects.create(user_id=user_id, paid=True)
+
+  user_id            = request.user.id
+  plan_id            = request.POST.get('plan')
+  user_exist         = Customer.objects.filter(user_id=user_id)
+
+  if  user_exist:
+    current_user     = user_exist.update(paid=True, plan=int(plan_id))
+  else:
+    current_user     = Customer.objects.create(user_id=user_id, paid=True, plan=int(plan_id))
   return HttpResponse("OK")
 
 @login_required
@@ -465,111 +497,159 @@ def snackbars(request):
 @login_required
 def registration_interface(request):
   if is_customer(request):
-    return render(request, 'course/registration_interface.html')
+    if customer_has_full_access(request):
+      return render(request, 'course/registration_interface.html')
+    else:
+      return render(request, 'course/upgrade.html')
   else:
     return render(request, 'course/payment.html')
 
 @login_required
 def application_interface(request):
   if is_customer(request):
-    return render(request, 'course/application_interface.html')
+    if customer_has_full_access(request):
+      return render(request, 'course/application_interface.html')
+    else:
+      return render(request, 'course/upgrade.html')
   else:
     return render(request, 'course/payment.html')
 
 @login_required
 def user_flows(request):
   if is_customer(request):
-    return render(request, 'course/user_flows.html')
+    if customer_has_full_access(request):
+      return render(request, 'course/user_flows.html')
+    else:
+      return render(request, 'course/upgrade.html')
   else:
     return render(request, 'course/payment.html')
 
 @login_required
 def interactive_prototype(request):
   if is_customer(request):
-    return render(request, 'course/interactive_prototype.html')
+    if customer_has_full_access(request):
+      return render(request, 'course/interactive_prototype.html')
+    else:
+      return render(request, 'course/upgrade.html')
   else:
     return render(request, 'course/payment.html')
 
 @login_required
 def sample_app_instagram(request):
   if is_customer(request):
-    return render(request, 'course/sample_app_instagram.html')
+    if customer_has_full_access(request):
+      return render(request, 'course/sample_app_instagram.html')
+    else:
+      return render(request, 'course/upgrade.html')
   else:
     return render(request, 'course/payment.html')
 
 @login_required
 def sample_app_facebook(request):
   if is_customer(request):
-    return render(request, 'course/sample_app_facebook.html')
+    if customer_has_full_access(request):
+      return render(request, 'course/sample_app_facebook.html')
+    else:
+      return render(request, 'course/upgrade.html')
   else:
     return render(request, 'course/payment.html')
 
 @login_required
 def iterations(request):
   if is_customer(request):
-    return render(request, 'course/iterations.html')
+    if customer_has_full_access(request):
+      return render(request, 'course/iterations.html')
+    else:
+      return render(request, 'course/upgrade.html')
   else:
     return render(request, 'course/payment.html')
 
 @login_required
 def spec(request):
   if is_customer(request):
-    return render(request, 'course/rlp_spec.html')
+    if customer_has_full_access(request):
+      return render(request, 'course/rlp_spec.html')
+    else:
+      return render(request, 'course/upgrade.html')
   else:
     return render(request, 'course/payment.html')
 
 @login_required
 def wireframes(request):
   if is_customer(request):
-    return render(request, 'course/rlp_wireframes.html')
+    if customer_has_full_access(request):
+      return render(request, 'course/rlp_wireframes.html')
+    else:
+      return render(request, 'course/upgrade.html')
   else:
     return render(request, 'course/payment.html')
 
 @login_required
 def rlp_user_flows(request):
   if is_customer(request):
-    return render(request, 'course/rlp_user_flows.html')
+    if customer_has_full_access(request):
+      return render(request, 'course/rlp_user_flows.html')
+    else:
+      return render(request, 'course/upgrade.html')
   else:
     return render(request, 'course/payment.html')
 
 @login_required
 def prototype(request):
   if is_customer(request):
-    return render(request, 'course/rlp_prototype.html')
+    if customer_has_full_access(request):
+      return render(request, 'course/rlp_prototype.html')
+    else:
+      return render(request, 'course/upgrade.html')
   else:
     return render(request, 'course/payment.html')
 
 @login_required
 def design(request):
   if is_customer(request):
-    return render(request, 'course/rlp_design.html')
+    if customer_has_full_access(request):
+      return render(request, 'course/rlp_design.html')
+    else:
+      return render(request, 'course/upgrade.html')
   else:
     return render(request, 'course/payment.html')
 
 @login_required
 def design_guide(request):
   if is_customer(request):
-    return render(request, 'course/rlp_design_guide.html')
+    if customer_has_full_access(request):
+      return render(request, 'course/rlp_design_guide.html')
+    else:
+      return render(request, 'course/upgrade.html')
   else:
     return render(request, 'course/payment.html')
 
 @login_required
 def assets(request):
   if is_customer(request):
-    return render(request, 'course/rlp_assets.html')
+    if customer_has_full_access(request):
+      return render(request, 'course/rlp_assets.html')
+    else:
+      return render(request, 'course/upgrade.html')
   else:
     return render(request, 'course/payment.html')
 
 @login_required
 def portfolio(request):
   if is_customer(request):
-    return render(request, 'course/portfolio.html')
+    if customer_has_full_access(request):
+      return render(request, 'course/portfolio.html')
+    else:
+      return render(request, 'course/upgrade.html')
   else:
     return render(request, 'course/payment.html')
 
 @login_required
 def client(request):
   if is_customer(request):
-    return render(request, 'course/client.html')
+    if customer_has_full_access(request):
+      return render(request, 'course/client.html')
+    else:
+      return render(request, 'course/upgrade.html')
   else:
     return render(request, 'course/payment.html')

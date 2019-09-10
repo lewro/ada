@@ -22,6 +22,10 @@ urlpatterns = [
     path('set_customer_as_paid/', views.set_customer_as_paid, name='set_customer_as_paid'),
     path('ebook/', views.ebook, name='ebook'),
     path('send_ebook/', views.send_ebook, name='send_ebook'),
+    path('paypal_1/', views.paypal_1, name='paypal_1'),
+    path('paypal_2/', views.paypal_2, name='paypal_2'),
+    path('paypal_3/', views.paypal_3, name='paypal_3'),
+    path('upgrade/', views.upgrade, name='upgrade'),
 
     path('start/', views.start, name='start'),
     path('inspiration/', views.inspiration, name='inspiration'),

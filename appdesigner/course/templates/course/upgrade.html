@@ -1,0 +1,75 @@
+{% extends "course/base.html" %}
+
+{% block content %}
+
+<div class="plan stranger">
+
+<div class="container">
+  <div class="content payment-success">
+    <i class="far fa-check-circle"></i>
+    <h1>Congratulations <span class="name"></span>! The payment was successful.</h1>
+    <a class="button" href="/start">Start Your Course</a>
+  </div>
+  <div class="main-content">
+    <div class="content">
+      <div class="row vrithm">
+        <div class="col s12 m12 l12">
+          <h2>Application Design Academy - Upgrade to Premium Plan</h2>
+          <p><strong><i class="fas fa-video"></i> 7 more hours</strong> of video content, <strong><i class="fas fa-cloud-download-alt"></i> 13 more</strong> downloadable resources.</p>
+          <ul class="plans_list">
+              <li><i class="far fa-check-circle"></i>Wireframing - 4 lessons</li>
+              <li><i class="far fa-check-circle"></i>Application Design - 3 lessons</li>
+              <li><i class="far fa-check-circle"></i>Real-life Project - 7 lessons</li>
+              <li><i class="far fa-check-circle"></i>Portfolio & Client - 2 lessons</li>
+          </ul>
+          <a class="button" href="/paypal_3/">Upgrade for $699</a><a class="cancel" href="/start/">No thanks, take me back to my course.</a>
+        </div>
+      </div>
+
+      <div class="row vrithm">
+        <div class="col s12 m12 l12">
+          <h2>What you will learn</h2>
+          <ul class="upgrade-list">
+            <li><img src="{{ MEDIA_URL }}58.png"/></li>
+            <li><img src="{{ MEDIA_URL }}59.png"/></li>
+            <li><img src="{{ MEDIA_URL }}60.png"/></li>
+            <li><img src="{{ MEDIA_URL }}61.png"/></li>
+            <li><img src="{{ MEDIA_URL }}62.png"/></li>
+            <li><img src="{{ MEDIA_URL }}63.png"/></li>
+            <li><img src="{{ MEDIA_URL }}64.png"/></li>
+            <li><img src="{{ MEDIA_URL }}65.png"/></li>
+            <li><img src="{{ MEDIA_URL }}66.png"/></li>
+            <li><img src="{{ MEDIA_URL }}67.png"/></li>
+            <li><img src="{{ MEDIA_URL }}68.png"/></li>
+            <li><img src="{{ MEDIA_URL }}69.png"/></li>
+            <li><img src="{{ MEDIA_URL }}70.png"/></li>
+            <li><img src="{{ MEDIA_URL }}71.png"/></li>
+            <li><img src="{{ MEDIA_URL }}72.png"/></li>
+            <li><img src="{{ MEDIA_URL }}73.png"/></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row vrithm">
+        <div class="col s12 m12 l12">
+          <h2><strong><i class="fas fa-video"></i> 7 more hours</strong> of video content, <strong><i class="fas fa-cloud-download-alt"></i> 13 more</strong> downloadable resources.</h2>
+          <ul class="plans_list">
+              <li><i class="far fa-check-circle"></i>Wireframing - 4 lessons</li>
+              <li><i class="far fa-check-circle"></i>Application Design - 3 lessons</li>
+              <li><i class="far fa-check-circle"></i>Real-life Project - 7 lessons</li>
+              <li><i class="far fa-check-circle"></i>Portfolio & Client - 2 lessons</li>
+          </ul>
+          <a class="button" href="/paypal_3/">Upgrade for $699</a><a class="cancel" href="/start/">No thanks, take me back to my course.</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+{% include 'course/partials/footer.html' %}
+
+</div>
+
+{% endblock %}

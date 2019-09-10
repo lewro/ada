@@ -6,3 +6,4 @@ class Customer(models.Model):
   user             = models.OneToOneField(User, on_delete=models.CASCADE)
   paid             = models.BooleanField(default=False)
   time_spent       = models.IntegerField(default=0)
+  plan             = models.IntegerField(default=1)

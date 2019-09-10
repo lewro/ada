@@ -1,0 +1,64 @@
+{% extends "course/base.html" %}
+
+{% block content %}
+
+<div class="plan stranger">
+
+<div class="container">
+  <div class="content payment-success">
+    <i class="far fa-check-circle"></i>
+    <h1>Congratulations <span class="name"></span>! The payment was successful.</h1>
+    <a class="button" href="/start">Start Your Course</a>
+  </div>
+  <div class="main-content content">
+    <div class="row vrithm">
+      <div class="col s12 m3 l3"></div>
+      <div class="col s12 m6 l6">
+        <h2>Application Design Academy / Starter Plan - $299</h2>
+        <p>Choose your payment method</p>
+
+        <!-- Set up a container element for the button -->
+        <div id="paypal-button-container" class="vrithm"></div>
+        <!-- Include the PayPal JavaScript SDK -->
+        <script src="https://www.paypal.com/sdk/js?client-id=AaQjzhHTFxK22yHNfbbyszDHUbD3-d-lFPfGRdarryrfoivBfc8hgski3YgTwt2eXkjlxHQMBaV5aCqf&currency=USD"></script>
+        <script>
+            // Render the PayPal button into #paypal-button-container
+            paypal.Buttons({
+                // Set up the transaction
+                createOrder: function(data, actions) {
+                    return actions.order.create({
+                        purchase_units: [{
+                            amount: {
+                                value: '299'
+                            }
+                        }]
+                    });
+                },
+
+                // Finalize the transaction
+                onApprove: function(data, actions) {
+                    return actions.order.capture().then(function(details) {
+                        var url = "/set_customer_as_paid/";
+                        var data = new FormData();
+                        data.append('plan', '1');
+                        var xhttp = new XMLHttpRequest();
+                        xhttp.open("POST", url, true);
+                        xhttp.setRequestHeader("X-CSRFToken", "{{ csrf_token }}");
+                        xhttp.send(data);
+                        $('.name').html(details.payer.name.given_name);
+                        $('.payment-success').show();
+                    });
+                }
+            }).render('#paypal-button-container');
+        </script>
+      </div>
+      <div class="col s12 m3 l3"></div>
+    </div>
+  </div>
+</div>
+
+{% include 'course/partials/footer.html' %}
+
+</div>
+
+{% endblock %}
