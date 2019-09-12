@@ -66,6 +66,20 @@ def upgrade(request):
 def ebook(request):
   return render(request, 'course/ebook.html')
 
+def leaving(request):
+
+  subject     = "Leaving Reason"
+  reason      = request.POST['reason']
+  message     = "ID: " + str(request.user.id) + " Reason: " + reason
+
+  from_email  = settings.EMAIL_HOST_USER
+  password    = settings.EMAIL_HOST_PASSWORD
+  to_list     = ['applicationdesignacademy@gmail.com']
+
+  send_mail(subject, message, from_email, to_list, fail_silently=True)
+
+  return render(request, 'course/leaving.html')
+
 def send_ebook(request):
 
   subject     = "eBook Request"

@@ -4,6 +4,46 @@
 
 <div class="plan stranger">
 
+<div class="leaving">
+  <span class="close-leaving"><i class="fas fa-times"></i></span>
+  <img  class="me" src="/static/images/rl.jpg" alt="" />
+  <h3>Quick qustion before you leave</h3>
+  <h2>What do you think about these offers?</h2>
+
+
+  <p>I really appreciate your answer. Thank you very much. 🙏 ❤️</p>
+  <form action="/leaving/" method="post">
+    {% csrf_token %}
+    <ul>
+      <li>
+        <label>
+          <input name="reason" type="radio" value="will come back" />
+          <span>I like it, I will come back to get it</span>
+        </label>
+      </li>
+      <li>
+        <label>
+          <input name="reason" type="radio" value="not for me"  />
+          <span>Not for me</span>
+        </label>
+      </li>
+      <li>
+        <label>
+          <input name="reason" type="radio" value="not the right time"/>
+          <span>Not the right time</span>
+        </label>
+      </li>
+      <li>
+        <label>
+          <input name="reason" type="radio" value="not the right price" />
+          <span>Not the right price</span>
+        </label>
+      </li>
+    </ul>
+    <button type="submit">Send now</button>
+  </form>
+</div>
+
 <div class="container">
   <div class="content payment-success">
     <i class="far fa-check-circle"></i>

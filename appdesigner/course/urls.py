@@ -14,6 +14,7 @@ urlpatterns = [
     path('inactivate_account/', views.inactivate_account, name='inactivate_account'),
     path('activate_account/', views.activate_account, name='activate_account'),
 
+    path('leaving/', views.leaving, name='leaving'),
     path('about/', views.about, name='about'),
     path('terms/', views.terms, name='terms'),
     path('privacy/', views.privacy, name='privacy'),

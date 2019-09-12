@@ -33,6 +33,16 @@ $(document).ready(function(){
      return validateForm(this);
   });
 
+  document.addEventListener("mouseleave", function(e){
+    if( e.clientY < 0 ) {
+      $('.leaving').slideDown();
+    }
+  }, false);
+
+  $('.close-leaving').click(function() {
+    $('.leaving').slideUp();
+  });
+
   // Modules - Lessons
   $('.module').click(function() {
     $('.module').removeClass('active');
